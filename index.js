@@ -9,7 +9,7 @@ const { chromium } = require('playwright');
   await page.goto('https://book.douban.com/');
   await page.waitForTimeout(1000)
   // const list = await page.evaluate(() => {
-  //   const domList = document.querySelectorAll('.slide-item')
+  //   const domList = document.querySelectorAll('.ui-slide-item')
   //   return Array.from(domList).map(dom => {
   //     const poster = dom.querySelector('.poster img')
   //     const title = dom.querySelector('.title')
