@@ -3,15 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "npx playwright test --config=tests/playwright.config.js"
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/super-simple-solution/spider.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "playwright": "^1.24.2"
+  "bugs": {
+    "url": "https://github.com/super-simple-solution/spider/issues"
   },
+  "homepage": "https://github.com/super-simple-solution/spider#readme",
   "devDependencies": {
     "@playwright/test": "^1.24.2"
   }
