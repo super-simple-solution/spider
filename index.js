@@ -8,6 +8,20 @@ const { chromium } = require('playwright');
   const page = await context.newPage();
   await page.goto('https://book.douban.com/');
   await page.waitForTimeout(1000)
+  // const list = await page.evaluate(() => {
+  //   const domList = document.querySelectorAll('.slide-item')
+  //   return Array.from(domList).map(dom => {
+  //     const poster = dom.querySelector('.poster img')
+  //     const title = dom.querySelector('.title')
+  //     const author = dom.querySelector('.rating')
+  //     return {
+  //       poster: poster && poster.getAttribute('src'),
+  //       title: title && title.innerText,
+  //       rating: rating && title.innerText,
+  //     }
+  //   })
+  // })
+
 
   const list = await page.$$eval('.slide-item li', doms => {
     return doms.map(dom => {
