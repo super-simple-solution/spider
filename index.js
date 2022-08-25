@@ -1,4 +1,5 @@
 const { chromium } = require('playwright');
+const { writeFile } = require('./utils/writeFile');
 
 (async () => {
   const browser = await chromium.launch({ headless: false });
@@ -45,7 +46,7 @@ async function getDom(page, browser, url) {
 
   console.log(list, 'list', url)
   const nextPage = await page.$('.pagination .next a')
-  
+  const pageIndex = await page.innerText('.pagination .active')
   if (!nextPage) {
     await browser.close();
   } else {
@@ -57,5 +58,6 @@ async function getDom(page, browser, url) {
       console.log(e, 'error')
     }
   }
+  writeFile('douban', pageIndex, list)
   return list
 }
